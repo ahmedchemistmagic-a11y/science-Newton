@@ -16,7 +16,7 @@ z-index: 999;
 display: flex;
 justify-content:space-between;
 align-items: center;
-padding: 10px 200px;
+padding: 10px 100px;
 }
 .logo {
 text-decoration: none;
@@ -24,17 +24,37 @@ color:#FFFFFF ;
 text-transform: uppercase;
 font-weight: 700;
 font-size: 1.8em;
+margin-left: -50px;
 
 }
 .navigation a{
+    position: relative;
 text-decoration: none;
 color: #EAB308;
 font-size: 1.1em;
-font-weight: 500;
-padding-left: 30px;
+font-weight: 800;
+padding-left: 80px;
+font-family:"cairo"
+
 }
-.navigation a:hover{
+.navigation a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 40px;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+    background-color: #67E8F9;
+
+    transition: 0.5s;
+}
+.navigation a:hover::after{
 color: #67E8F9;
+width:100% ;
 }
 section{
 padding: 100px 200px;
@@ -42,14 +62,15 @@ padding: 100px 200px;
 .main {
 width: 100%;
 min-height: 100vh;
-display: flex;
+display:flex;
 align-items:center;
 background:url(222.PNG) no-repeat;
 background-size: cover
 background-position: center
 background-position-y: -220px;
 background-position-x: 500px;
-
+height: auto;
+max-width: 100%;
 }
 .main h2{
 color: rgb(226, 14, 14);
@@ -66,11 +87,12 @@ font-weight: 600;
 }
 .main h3{
 color: blueviolet;
-font-size: 2em;
+font-size: 25px;
 font-weight: 700;
 letter-spacing: 5px;
 margin-top: 10px;
 margin-bottom: 30px;
+font-family:"cairo"
 }
 .main-btn{
 color: rgb(68, 11, 224);
@@ -150,6 +172,29 @@ border-radius: 15px;
     border-radius: 15px;
     
 }
+.logo1{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: -10px;
+}
+@media (max-width:768px){
+
+    .container{
+        width: 95%;
+        height: auto;
+    }
+
+    nav{
+        padding: 15px;
+    }
+
+    ul{
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+}
 @media (max-width:1023px){
 header{
     padding: 12px 20px
@@ -174,9 +219,31 @@ section{
     align-items: center;
 }
 }
+@media (max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    ul{
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .container{
+        width: 95%;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+}
 @media (max-width:641px){
     body{
-        font-size: 12px;
+        font-size: 5px;
     }
 .main-content h2{
     font-size: 0.8em;
@@ -191,6 +258,8 @@ section{
 
     }
 }
+
+
 
 
 
